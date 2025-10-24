@@ -1,3 +1,4 @@
+import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import com.example.dely.R
@@ -25,14 +26,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.dely.ui.buttons.CircularImage
 import com.example.dely.ui.buttons.InputText
+import com.example.dely.ui.buttons.PrimaryButton
 import com.example.dely.ui.theme.DelyTheme
+import com.example.dely.ui.viewmodel.LoginViewModel
 
 @Composable
-fun LoginScreen() {
-    var usuario by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
+fun LoginScreen(viewModel: LoginViewModel, navController: NavController) {
 
     Column(
         modifier = Modifier
@@ -56,23 +59,41 @@ fun LoginScreen() {
         )
         Spacer(modifier = Modifier.height(20.dp))
         InputText(
-            value = usuario,
-            onValueChange = { usuario = it },
-            text = "Usuario",
+            value = viewModel.username.value,
+            onValueChange = { viewModel.username.value = it },
+            text = "Usuario"
+        )
+        Spacer(Modifier.height(20.dp))
+        InputText(
+            value = viewModel.password.value,
+            onValueChange = { viewModel.password.value = it },
+            text = "Contraseña"
         )
         Spacer(modifier = Modifier.height(20.dp))
-        InputText(
-            value = password,
-            onValueChange = { password = it },
-            text = "Contraseña",
-        )
+        PrimaryButton("Aceptar",) {
+            viewModel.login {
+                navController.navigate("menu") {
+                    popUpTo("login") { inclusive = true }
+                }
+            }
+        }
     }
 }
 
+
+@SuppressLint("ViewModelConstructorInComposable")
 @Preview(showBackground = true)
 @Composable
 fun PreviewLoginScreen() {
     DelyTheme {
-        LoginScreen()
+        val navController = rememberNavController()
+        val viewModel = LoginViewModel()
+
+       LoginScreen(
+            viewModel = viewModel,
+            navController = navController
+        )
     }
 }
+
+
