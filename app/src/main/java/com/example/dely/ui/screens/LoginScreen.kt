@@ -2,22 +2,15 @@ import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import com.example.dely.R
-
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -29,9 +22,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.dely.ui.buttons.CircularImage
 import com.example.dely.ui.buttons.InputText
 import com.example.dely.ui.buttons.PrimaryButton
+import com.example.dely.ui.texts.Link
 import com.example.dely.ui.theme.DelyTheme
 import com.example.dely.ui.viewmodel.LoginViewModel
 
@@ -84,6 +77,9 @@ fun LoginScreen(viewModel: LoginViewModel, navController: NavController) {
                     popUpTo("login") { inclusive = true }
                 }
             }
+        }
+        Link("¿Perdiste tu contraseña?") {
+            navController.navigate("menu")
         }
     }
 }
