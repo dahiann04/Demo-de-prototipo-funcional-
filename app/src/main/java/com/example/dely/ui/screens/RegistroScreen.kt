@@ -16,7 +16,7 @@ import com.example.dely.ui.viewmodel.MenuViewModel
 
 
 @Composable
-fun RegistroScreen(viewModel: MenuViewModel, navController: NavController) {
+fun RegistroScreen(navController: NavController) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(20.dp),

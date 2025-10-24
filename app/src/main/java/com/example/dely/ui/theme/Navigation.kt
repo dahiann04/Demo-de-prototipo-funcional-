@@ -21,14 +21,8 @@ fun Navigation() {
             val viewModel: LoginViewModel = viewModel()
             LoginScreen(viewModel = viewModel, navController = navController)
         }
-        composable("contraseña_perdida") {
-            val viewModel: MenuViewModel = viewModel()
-            PassPerdidaScreen(viewModel = viewModel, navController = navController)
-        }
-        composable("registro") {
-            val viewModel: MenuViewModel = viewModel()
-            RegistroScreen(viewModel = viewModel, navController = navController)
-        }
+        composable("forgot_password") { PassPerdidaScreen(navController) }
+        composable("register") { RegistroScreen(navController) }
         composable("menu") {
             val viewModel: MenuViewModel = viewModel()
             MenuScreen(viewModel = viewModel, navController = navController)

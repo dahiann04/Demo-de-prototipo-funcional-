@@ -16,7 +16,7 @@ import com.example.dely.ui.viewmodel.MenuViewModel
 
 
 @Composable
-fun PassPerdidaScreen(viewModel: MenuViewModel, navController: NavController) {
+fun PassPerdidaScreen(navController: NavController) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(20.dp),
