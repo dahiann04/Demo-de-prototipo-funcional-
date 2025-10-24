@@ -3,9 +3,11 @@ import androidx.compose.foundation.background
 import com.example.dely.R
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
@@ -19,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -42,14 +45,22 @@ fun LoginScreen() {
             painterResource(R.drawable.iconodely),
             contentDescription = "Dely",
             modifier = Modifier
-                .padding(0.dp, 0.dp, 0.dp, 0.dp)
-                .width(440.dp))
-
+                .padding(0.dp)
+                .width(420.dp)
+                .height(320.dp))
+        Text(text = "Inicio de sesión",
+            fontFamily = FontFamily.Cursive,
+            fontWeight = FontWeight.Bold,
+            fontSize = 32.sp,
+            modifier = Modifier
+        )
+        Spacer(modifier = Modifier.height(20.dp))
         InputText(
             value = usuario,
             onValueChange = { usuario = it },
             text = "Usuario",
         )
+        Spacer(modifier = Modifier.height(20.dp))
         InputText(
             value = password,
             onValueChange = { password = it },
