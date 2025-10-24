@@ -39,11 +39,11 @@ fun LoginScreen() {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Image(
-            painterResource(R.drawable.icono),
+            painterResource(R.drawable.iconodely),
             contentDescription = "Dely",
             modifier = Modifier
                 .padding(0.dp, 0.dp, 0.dp, 0.dp)
-                .width(340.dp))
+                .width(440.dp))
 
         InputText(
             value = usuario,
