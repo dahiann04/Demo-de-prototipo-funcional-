@@ -1,7 +1,5 @@
 package com.example.dely.ui.screens
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -18,19 +16,18 @@ import com.example.dely.ui.viewmodel.MenuViewModel
 
 
 @Composable
-fun MenuScreen(viewModel: MenuViewModel, navController: NavController){
-    Column (
+fun PassPerdidaScreen(viewModel: MenuViewModel, navController: NavController) {
+    Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(20.dp),
         modifier = Modifier.padding(30.dp)
     ) {
-        Row(modifier = Modifier.fillMaxWidth()){
+        Row(modifier = Modifier.fillMaxWidth()) {
         }
-        Row(modifier = Modifier.fillMaxWidth()){
+        Row(modifier = Modifier.fillMaxWidth()) {
             Text(
-                text = "Menu"
+                text = "Contraseña perdida"
             )
         }
     }
 }
-

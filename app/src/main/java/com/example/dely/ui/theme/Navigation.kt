@@ -7,6 +7,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.dely.ui.screens.MenuScreen
+import com.example.dely.ui.screens.PassPerdidaScreen
+import com.example.dely.ui.screens.RegistroScreen
 import com.example.dely.ui.viewmodel.LoginViewModel
 import com.example.dely.ui.viewmodel.MenuViewModel
 
@@ -21,13 +23,13 @@ fun Navigation() {
         }
         composable("contraseña_perdida") {
             val viewModel: MenuViewModel = viewModel()
-            MenuScreen(viewModel = viewModel, navController = navController)
+            PassPerdidaScreen(viewModel = viewModel, navController = navController)
         }
         composable("registro") {
             val viewModel: MenuViewModel = viewModel()
-            MenuScreen(viewModel = viewModel, navController = navController)
+            RegistroScreen(viewModel = viewModel, navController = navController)
         }
-        composable("cards") {
+        composable("menu") {
             val viewModel: MenuViewModel = viewModel()
             MenuScreen(viewModel = viewModel, navController = navController)
         }

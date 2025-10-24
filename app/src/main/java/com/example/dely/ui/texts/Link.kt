@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.sp
 fun Link(
     text: String,
     fontSize: Int = 15,
-    color: Color = Color.Blue,
+    color: Color = Color.Black,
     textAlign: TextAlign = TextAlign.Start,
     modifier: Modifier = Modifier,
     onClick: () -> Unit // Acción al hacer click
