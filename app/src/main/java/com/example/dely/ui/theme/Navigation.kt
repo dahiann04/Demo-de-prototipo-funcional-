@@ -11,6 +11,7 @@ import com.example.dely.ui.screens.PassPerdidaScreen
 import com.example.dely.ui.screens.RegistroScreen
 import com.example.dely.ui.viewmodel.LoginViewModel
 import com.example.dely.ui.viewmodel.MenuViewModel
+import com.example.dely.ui.viewmodel.RegistroViewModel
 
 @Composable
 fun Navigation() {
@@ -22,7 +23,10 @@ fun Navigation() {
             LoginScreen(viewModel = viewModel, navController = navController)
         }
         composable("forgot_password") { PassPerdidaScreen(navController) }
-        composable("register") { RegistroScreen(navController) }
+        composable("register") {
+            val viewModel: RegistroViewModel = viewModel()
+            RegistroScreen(viewModel = viewModel, navController = navController)
+        }
         composable("menu") {
             val viewModel: MenuViewModel = viewModel()
             MenuScreen(viewModel = viewModel, navController = navController)

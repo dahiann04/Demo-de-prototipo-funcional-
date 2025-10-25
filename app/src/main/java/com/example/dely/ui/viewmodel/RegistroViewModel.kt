@@ -10,4 +10,9 @@ class RegistroViewModel : ViewModel() {
         var password = mutableStateOf("")
         var fechaNacimiento = mutableStateOf("")
         var telefono = mutableStateOf("")
+
+        fun register(onSuccess: () -> Unit){
+
+        }
+
 }

@@ -37,7 +37,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.dely.ui.buttons.PrimaryButton
 
 @Composable
-fun RegistroScreen(navController: NavController) {
+fun RegistroScreen(viewModel: RegistroViewModel, navController: NavController){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(20.dp),
@@ -77,9 +77,9 @@ fun RegistroScreen(navController: NavController) {
             text = "Telfono",
         )
         PrimaryButton("Aceptar",) {
-            viewModel.registro {
-                navController.navigate("menu") {
-                    popUpTo("registro") { inclusive = true }
+            viewModel.register {
+                navController.navigate("login") {
+                    popUpTo("register") { inclusive = true }
                 }
             }
         }
@@ -87,7 +87,6 @@ fun RegistroScreen(navController: NavController) {
     }
     }
 
-private fun RegistroViewModel.registro(function: () -> Unit) {}
 
 @SuppressLint("ViewModelConstructorInComposable")
 @Preview(showBackground = true)
@@ -95,8 +94,10 @@ private fun RegistroViewModel.registro(function: () -> Unit) {}
 fun PreviewRegistro() {
     DelyTheme {
         val navController = rememberNavController()
+        val viewModel = RegistroViewModel()
 
         RegistroScreen(
+            viewModel = viewModel,
             navController = navController
         )
     }
