@@ -1,43 +1,28 @@
 package com.example.dely.ui.screens
 
-import LoginScreen
 import android.annotation.SuppressLint
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.dely.ui.buttons.InputText
-import com.example.dely.ui.theme.DelyTheme
-import com.example.dely.ui.viewmodel.LoginViewModel
-import com.example.dely.ui.viewmodel.MenuViewModel
-import com.example.dely.ui.viewmodel.RegistroViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.dely.ui.buttons.PrimaryButton
+import com.example.dely.ui.theme.DelyTheme
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.dely.ui.viewmodel.RegisterViewModel
 
 @Composable
-fun RegistroScreen(viewModel: RegistroViewModel, navController: NavController){
+fun RegistroScreen(viewModel: RegisterViewModel, navController: NavController){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(20.dp),
@@ -50,7 +35,7 @@ fun RegistroScreen(viewModel: RegistroViewModel, navController: NavController){
                 fontSize = 36.sp,
                 fontFamily = FontFamily.Cursive,
             )
-        val viewModel: RegistroViewModel = viewModel()
+        val viewModel: RegisterViewModel = viewModel()
         InputText(
             value = viewModel.username.value,
             onValueChange = { viewModel.username.value = it },
@@ -85,7 +70,7 @@ fun RegistroScreen(viewModel: RegistroViewModel, navController: NavController){
         }
 
     }
-    }
+}
 
 
 @SuppressLint("ViewModelConstructorInComposable")
@@ -94,7 +79,7 @@ fun RegistroScreen(viewModel: RegistroViewModel, navController: NavController){
 fun PreviewRegistro() {
     DelyTheme {
         val navController = rememberNavController()
-        val viewModel = RegistroViewModel()
+        val viewModel = RegisterViewModel()
 
         RegistroScreen(
             viewModel = viewModel,

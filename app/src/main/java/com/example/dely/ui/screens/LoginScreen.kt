@@ -82,6 +82,10 @@ fun LoginScreen(viewModel: LoginViewModel, navController: NavController) {
         Link("¿Perdiste tu contraseña?") {
             navController.navigate("forgot_password")
         }
+        Spacer(modifier = Modifier.height(30.dp))
+        Link("¿Aún no te has registrado?") {
+            navController.navigate("register")
+        }
     }
 }
 
