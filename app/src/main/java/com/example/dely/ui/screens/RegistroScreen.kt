@@ -69,12 +69,12 @@ fun RegistroScreen(viewModel: RegistroViewModel, navController: NavController){
         InputText(
             value = viewModel.fechaNacimiento.value,
             onValueChange = { viewModel.fechaNacimiento.value = it },
-            text = "Fecha de Nacimiento",
+            text = "Fecha de nacimiento",
         )
         InputText(
             value = viewModel.telefono.value,
             onValueChange = { viewModel.telefono.value = it },
-            text = "Telfono",
+            text = "Teléfono",
         )
         PrimaryButton("Aceptar",) {
             viewModel.register {
