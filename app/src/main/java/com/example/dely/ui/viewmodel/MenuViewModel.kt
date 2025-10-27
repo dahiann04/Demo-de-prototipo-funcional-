@@ -19,42 +19,42 @@ class MenuViewModel: ViewModel() {
                 "Pizza",
                 "Pizza Italiana",
                 "250",
-                R.drawable.icono
+                R.drawable.pizza
             ),
             Productos(
                 2,
                 "Hamburguesa",
                 "Sencilla con Papas",
                 "130",
-                R.drawable.icono
+                R.drawable.hamburguesas
             ),
             Productos(
                 3,
                 "Helado",
                 "Sabor Vainilla",
                 "15",
-                R.drawable.icono
+                R.drawable.helado
             ),
             Productos(
                 4,
                 "Lasaña",
                 "Lasaña de carne",
                 "180",
-                R.drawable.icono
+                R.drawable.lasa_a
             ),
             Productos(
                 5,
                 "Hot Dog",
                 "Sencillo",
                 "40",
-                R.drawable.icono
+                R.drawable.hotdog
             ),
             Productos(
                 6,
                 "Refresco",
                 "Sabor Coca Cola",
                 "25",
-                R.drawable.icono
+                R.drawable.coca
             ),
             )
         }

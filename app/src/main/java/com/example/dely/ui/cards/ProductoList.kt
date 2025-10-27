@@ -33,14 +33,14 @@ fun PreviewProductosList(){
             "Pizza",
             "Pizza Italiana",
             "$250",
-            R.drawable.icono
+            R.drawable.pizza
         ),
         Productos(
             2,
             "Papas",
             "Papas ala Francesa",
             "60",
-            R.drawable.icono
+            R.drawable.papasfrancesas
         ),
     )
     DelyTheme {
