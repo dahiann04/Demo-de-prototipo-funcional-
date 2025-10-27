@@ -57,6 +57,11 @@ fun PassPerdidaScreen(viewModel: PassPerdidaViewModel, navController: NavControl
             onValueChange = { viewModel.correo.value = it },
             text = "Ingresa tu correo"
         )
+        InputText(
+            value = viewModel.passnew.value,
+            onValueChange = { viewModel.passnew.value = it },
+            text = "Ingresa la nueva contraseña"
+        )
     }
 }
 
