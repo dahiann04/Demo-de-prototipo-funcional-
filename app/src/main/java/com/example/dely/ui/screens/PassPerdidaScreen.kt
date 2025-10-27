@@ -62,6 +62,25 @@ fun PassPerdidaScreen(viewModel: PassPerdidaViewModel, navController: NavControl
             onValueChange = { viewModel.passnew.value = it },
             text = "Ingresa la nueva contraseña"
         )
+        InputText(
+            value = viewModel.passnew.value,
+            onValueChange = { viewModel.passnew.value = it },
+            text = "Confirmar la nueva contraseña"
+        )
+        Image(
+            painterResource(R.drawable.iconodely),
+            contentDescription = "Dely",
+            modifier = Modifier
+                .padding(0.dp)
+                .width(420.dp)
+                .height(320.dp))
+        PrimaryButton("Aceptar") {
+            viewModel.pass {
+                navController.navigate("passperdida") {
+                    popUpTo("login") { inclusive = true }
+                }
+            }
+        }
     }
 }
 
